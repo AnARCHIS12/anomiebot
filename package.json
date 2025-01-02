@@ -9,5 +9,11 @@
   "dependencies": {
     "discord.js": "^14.14.1",
     "dotenv": "^16.3.1"
+  },
+  "license": "MIT",
+  "author": "ANOMIE-X3000 [SYSTÈME CHAOS]",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnARCHIS12/anomiebot.git"
   }
 }
