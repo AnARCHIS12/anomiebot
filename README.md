@@ -71,19 +71,46 @@
 
 ### 📡 PHASE 1: INITIALIZATION
 ```bash
-git clone https://github.com/your-username/anomie-x3000.git
-cd anomie-x3000
+# Cloner le repo chaos
+git clone https://github.com/AnARCHIS12/anomiebot.git
+cd anomiebot
 ```
 
 ### 💠 PHASE 2: QUANTUM SYNC
 ```bash
-npm install --force # WARNING: REALITY MANIPULATION DETECTED
+# Installer les dépendances
+npm install
+
+# Configurer le token
+# 1. Créer un fichier config.env
+# 2. Ajouter votre token Discord :
+TOKEN=votre_token_discord_ici
+
+# ⚠️ IMPORTANT: Ne jamais partager ou commit le fichier config.env ⚠️
 ```
 
 ### 🎮 PHASE 3: ACTIVATION
 ```bash
-node index.js # INITIATING CHAOS SEQUENCE
+# Démarrer le chaos
+node index.js
 ```
+
+### 🌌 CONFIGURATION REQUISE
+
+1. Node.js v16 ou supérieur
+2. Un bot Discord avec :
+   - Token d'accès
+   - Permissions administrateur
+   - Intents activés :
+     - GUILDS
+     - GUILD_MEMBERS
+     - GUILD_MESSAGES
+     - MESSAGE_CONTENT
+
+### ⚡ LIEN D'INVITATION
+
+Invitez le chaos sur votre serveur :
+[DÉCHAÎNER LE CHAOS](https://discord.com/oauth2/authorize?client_id=1324390322037456966&permissions=8&integration_type=0&scope=applications.commands+bot)
 
 ## ⚠️ DANGER MATRIX
 
