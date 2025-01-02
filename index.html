@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANOMIE-X3000 | BOT CHAOS</title>
+    <style>
+        :root {
+            --neon-text-color: #f40;
+            --neon-border-color: #08f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cyberpunk', 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #000000, #1a1a1a);
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--neon-border-color);
+            border-radius: 15px;
+            box-shadow: 0 0 20px var(--neon-border-color),
+                        inset 0 0 20px var(--neon-border-color);
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px var(--neon-border-color), inset 0 0 20px var(--neon-border-color); }
+            50% { box-shadow: 0 0 40px var(--neon-border-color), inset 0 0 40px var(--neon-border-color); }
+            100% { box-shadow: 0 0 20px var(--neon-border-color), inset 0 0 20px var(--neon-border-color); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: var(--neon-text-color);
+            text-shadow: 0 0 10px var(--neon-text-color),
+                         0 0 20px var(--neon-text-color),
+                         0 0 30px var(--neon-text-color);
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 10px var(--neon-text-color),
+                            0 0 20px var(--neon-text-color),
+                            0 0 30px var(--neon-text-color);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #0ff;
+            text-shadow: 0 0 5px #0ff;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            padding: 1rem;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid #0ff;
+        }
+
+        .add-bot {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(45deg, #f40, #f04);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255, 68, 0, 0.5);
+        }
+
+        .add-bot:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 68, 0, 0.8);
+        }
+
+        .add-bot::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .warning {
+            color: #f40;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-rain" id="matrix"></canvas>
+    <div class="container">
+        <h1>ANOMIE-X3000</h1>
+        <p class="description">
+            Le bot Discord ultime conçu pour créer un chaos absolu et une destruction digitale totale.
+            Transformez votre serveur en une dimension parallèle où l'ordre n'existe plus.
+        </p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🌪️ CHAOS TOTAL</h3>
+                <p>30-80 salons par cycle</p>
+            </div>
+            <div class="feature">
+                <h3>⚡ SPAM INFINI</h3>
+                <p>Messages en cascade</p>
+            </div>
+            <div class="feature">
+                <h3>🎭 MUTATION</h3>
+                <p>Rôles & pseudos aléatoires</p>
+            </div>
+        </div>
+
+        <a href="https://discord.com/oauth2/authorize?client_id=1324390322037456966&permissions=8&integration_type=0&scope=applications.commands+bot" class="add-bot" target="_blank">
+            DÉCHAÎNER LE CHAOS
+        </a>
+
+        <p class="warning">⚠️ ATTENTION : CE BOT EST UNE ARME DE DESTRUCTION MASSIVE ⚠️</p>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const alphabet = katakana + latin + nums;
+
+        const fontSize = 16;
+        const columns = canvas.width/fontSize;
+
+        const rainDrops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+
+            for(let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+
+                if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+
+        setInterval(draw, 30);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
